@@ -500,6 +500,12 @@
                                             <span></span>I Accept to the Terms & Conditions</label>
                                     </div>
                                 </div>
+                                {% if errorUN %}
+                                  <span style="color: red">Username Already Exists</span>
+                                {% endif %}
+                                {% if errorPWD %}
+                                  <span style="color: red">Password Does not match</span>
+                                {% endif %}
                                 <div class="right-w3l">
                                     <input name="signup" type="submit" class="form-control" value="Register">
                                 </div>
@@ -544,6 +550,11 @@
                                 <div class="right-w3l">
                                     <input type="submit" name = "login" class="form-control" value="Login">
                                 </div>
+                                {% if userError %}
+                                  <script>
+                                      alert("Invalid USername or Password")
+                                  </script>
+                                {% endif %}
                             </form>
                         </div>
                     </div>
